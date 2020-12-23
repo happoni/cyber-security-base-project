@@ -6,7 +6,7 @@ from .models import Character, Item
 
 @login_required
 def index(request):
-	users_characters = Character.objects.filter(user = request.user)
+	characters = Character.objects.filter(user = request.user)
 	latest_added_item = Item.objects.last()
 
 	return render(request, 'inventory/index.html', {'characters': characters})
