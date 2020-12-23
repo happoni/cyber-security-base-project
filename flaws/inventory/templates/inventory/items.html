@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<style>
+			table {
+				font-family: arial, sans-serif;
+				border-collapse: collapse;
+				width: 50%;
+			}
+			
+			td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 8px;
+			}
+			
+			tr:nth-child(even) {
+				background-color: #dddddd;
+			}
+			</style>
+			<title>Epic Item Inventory</title>
+	</head>
+
+	<body>
+		<a href='/'>Back to front page</a>
+		
+		<h1>All items in Inventory</h1>
+	
+			<table>
+				<tr>
+					<th style="text-align: left;">Name</th>
+					<th>Armor level</th>
+				</tr>
+				{% for item in items %}
+				<tr>
+					<td>{{item.name}}</td>
+					<td>{{item.armor_level}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+
+	</body>
+</html>

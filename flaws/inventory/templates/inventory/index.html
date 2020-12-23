@@ -20,9 +20,19 @@
 		<h2>Your characters</h2>
 			<ul>
 				{% for character in characters %}
-				<li>{{character}}</li>
+				<li><a href='/characters/{{character.id}}'>{{character}}</a></li>
 				{% endfor %}
 			</ul>
+
+		<h3>Latest item</h3>
+			<table>
+				<tr>
+					<th style="text-align:left">Name: <td>{{latest_item}}
+				<tr>
+					<th style="text-align:left">Armor level: <td>{{latest_item.armor_level}}</td>
+			</table>
+					
+			<a href='/items/'>Check all items or add a new one</a>
 
 	</body>
 </html>

@@ -8,17 +8,14 @@ from .models import Character, Item
 def index(request):
 	characters = Character.objects.filter(user = request.user)
 	latest_added_item = Item.objects.last()
-
-	return render(request, 'inventory/index.html', {'characters': characters})
+	return render(request, 'inventory/index.html', {'characters': characters, 'latest_item': latest_added_item})
 
 def character_details(request, character_id):
 	return HttpResponse("Here you'll find character %s info." % character_id)
-
-def item_details(request, item_id):
-	return HttpResponse("Here you'll find item %s info." % item_id)
 
 def characters(request):
 	return HttpResponse("All characters.")
 
 def items(request):
-	return HttpResponse("All items.")
+	items = Item.objects.all()
+	return render(request, 'inventory/items.html', {'items': items})
