@@ -11,10 +11,9 @@ def index(request):
 	return render(request, 'inventory/index.html', {'characters': characters, 'latest_item': latest_added_item})
 
 def character_details(request, character_id):
-	return HttpResponse("Here you'll find character %s info." % character_id)
-
-def characters(request):
-	return HttpResponse("All characters.")
+	character = Character.objects.get(pk=character_id)
+	items = Item.objects.filter(characters__id=character_id)
+	return render(request, 'inventory/character.html', {'character': character, 'items': items})
 
 def items(request):
 	items = Item.objects.all()
