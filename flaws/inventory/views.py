@@ -13,7 +13,8 @@ def index(request):
 def character_details(request, character_id):
 	character = Character.objects.get(pk=character_id)
 	items = Item.objects.filter(characters__id=character_id)
-	return render(request, 'inventory/character.html', {'character': character, 'items': items})
+	other_items = Item.objects.exclude(characters__id=character_id)
+	return render(request, 'inventory/character.html', {'character': character, 'items': items, 'other_items': other_items})
 
 def items(request):
 	items = Item.objects.all()
@@ -26,3 +27,13 @@ def add_item(request):
 		item = Item.objects.create(name=item_name, armor_level=item_armor_level)
 
 	return redirect('/items/')
+
+def add_to_character(request):
+	if request.method == 'POST':
+		character = Character.objects.get(pk=request.POST.get('character_id'))
+		item = request.POST.get('item')
+		i = Item.objects.get(name=item)
+		i.characters.add(character)
+
+	return redirect('/characters/%s' % character.id)
+

@@ -16,6 +16,19 @@
 
 		<h3>{{character.name}}'s items</h3>
 
+			<h4>Add item to character from Inventory</h4>
+			<form method="POST" action="/add_to_character/">
+				{% csrf_token %}
+				<span>Item:</span><br/>
+					<select name="item">
+						{% for item in other_items %}
+							<option value="{{item.name}}">{{item.name}}</option>
+						{% endfor %}
+					</select><br/>
+					<input type="hidden" name=character_id value="{{character.id}}">
+				<input type="submit" value="Add!"/>
+			</form>
+
 			<table>
 				<tr>
 					<th style="text-align: left;">Name</th>
