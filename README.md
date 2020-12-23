@@ -14,11 +14,18 @@ Application has two users:
 - alice:redqueen
 - bob:squarepants
 
+## Usage
+
+App, named Inventory, is simple database application to store info about roleplay characters and their epic armor and weapons (both counted just items).
+
+- Login with any of given users.
+- At front page you'll see users characters and are able to create a new one.
+- You'll also see latest item added by anyone.
+- Click bottom link to see all items and to add a new one. Items-page contains simple list of all items in Inventory.
+- At front page, click name of the character to see their details: name, level and items they have.
+- At character page you are able to add item from Inventory to this specific character.
+
 ## Security flaws in app
 
 As instructed, app contains five security flaws from [OWASP top ten list](https://owasp.org/www-project-top-ten/). These are:
-- Injection
-- Broken Authentication
-- Sensitive Data Exposure
-- Broken Access Control
-- Security Misconfiguration/Cross-Site Scripting
+**TBA**

@@ -10,6 +10,15 @@ def index(request):
 	latest_added_item = Item.objects.last()
 	return render(request, 'inventory/index.html', {'characters': characters, 'latest_item': latest_added_item})
 
+def create_character(request):
+	if request.method == 'POST':
+		currentUser = request.user
+		character_name = request.POST.get('name')
+		character_level = request.POST.get('level')
+		character = Character.objects.create(name=character_name, level=character_level, user=currentUser)
+
+	return redirect('/')
+
 def character_details(request, character_id):
 	character = Character.objects.get(pk=character_id)
 	items = Item.objects.filter(characters__id=character_id)
