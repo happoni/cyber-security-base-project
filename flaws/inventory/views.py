@@ -19,3 +19,11 @@ def characters(request):
 def items(request):
 	items = Item.objects.all()
 	return render(request, 'inventory/items.html', {'items': items})
+
+def add_item(request):
+	if request.method == 'POST':
+		item_name = request.POST.get('name')
+		item_armor_level = request.POST.get('armor_level')
+		item = Item.objects.create(name=item_name, armor_level=item_armor_level)
+
+	return redirect('/items/')
