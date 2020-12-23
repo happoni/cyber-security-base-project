@@ -8,7 +8,7 @@ This repository contains my project in [Cyber Security Base 2020](https://cybers
 
 Nothing special here, if you've completed part 2 of Cyber Security Base 2020 -course. Clone the repository, navigate to *flaws/* and run: ```python3 manage.py runserver```
 
-Django server shall start and you'll find app in [localhost:8000/](localhost:8000/).
+Django server shall start and you'll find app in [localhost:8000](localhost:8000/).
 
 Application has two users:
 - alice:redqueen
