@@ -45,8 +45,8 @@
 				</tr>
 				{% for item in items %}
 				<tr>
-					<td>{{item.name}}</td>
-					<td>{{item.armor_level}}</td>
+					<td>{{item.name|safe}}</td>
+					<td>{{item.armor_level|safe}}</td>
 				</tr>
 				{% endfor %}
 			</table>

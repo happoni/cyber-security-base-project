@@ -52,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'flaws.urls'
+SESSION_ENGINE = 'flaws.simplesession'
 
 TEMPLATES = [
     {

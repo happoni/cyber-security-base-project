@@ -11,10 +11,10 @@ def index(request):
 	return render(request, 'inventory/index.html', {'characters': characters, 'latest_item': latest_added_item})
 
 def create_character(request):
-	if request.method == 'POST':
+	if request.method == 'GET':
 		currentUser = request.user
-		character_name = request.POST.get('name')
-		character_level = request.POST.get('level')
+		character_name = request.GET.get('name')
+		character_level = request.GET.get('level')
 		character = Character.objects.create(name=character_name, level=character_level, user=currentUser)
 
 	return redirect('/')

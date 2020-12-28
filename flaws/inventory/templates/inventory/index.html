@@ -20,8 +20,8 @@
 		<h2>Your characters</h2>
 		
 		<h3>Create new character</h3>
-		<form method="POST" action="/create_character/">
-			{% csrf_token %}
+		<form method="GET" action="/create_character/">
+
 			<label for="name">Name:</label><br>
 			<input type="text" name="name"/><br>
 			<label for="level">Level:</label><br>
@@ -33,7 +33,7 @@
 
 			<ul>
 				{% for character in characters %}
-				<li><a href='/characters/{{character.id}}'>{{character}}</a></li>
+				<li><a href='/characters/{{character.id}}'>{{character|safe}}</a></li>
 				{% endfor %}
 			</ul>
 

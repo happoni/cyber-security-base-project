@@ -28,4 +28,8 @@ App, named Inventory, is simple database application to store info about rolepla
 ## Security flaws in app
 
 As instructed, app contains five security flaws from [OWASP top ten list](https://owasp.org/www-project-top-ten/). These are:
-**TBA**
+- Broken Authentication
+- Broken Access Control
+- Security Misconfiguration
+- Cross-Site-Scripting (XSS)
+- Using components with Known Vulnerabilities
