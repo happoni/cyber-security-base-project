@@ -17,8 +17,8 @@
 		<h3>{{character.name}}'s items</h3>
 
 			<h4>Add item to character from Inventory</h4>
-			<form method="POST" action="/add_to_character/">
-				{% csrf_token %}
+			<form method="GET" action="/add_to_character/">
+
 				<span>Item:</span><br/>
 					<select name="item">
 						{% for item in other_items %}

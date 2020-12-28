@@ -30,17 +30,17 @@ def items(request):
 	return render(request, 'inventory/items.html', {'items': items})
 
 def add_item(request):
-	if request.method == 'POST':
-		item_name = request.POST.get('name')
-		item_armor_level = request.POST.get('armor_level')
+	if request.method == 'GET':
+		item_name = request.GET.get('name')
+		item_armor_level = request.GET.get('armor_level')
 		item = Item.objects.create(name=item_name, armor_level=item_armor_level)
 
 	return redirect('/items/')
 
 def add_to_character(request):
-	if request.method == 'POST':
-		character = Character.objects.get(pk=request.POST.get('character_id'))
-		item = request.POST.get('item')
+	if request.method == 'GET':
+		character = Character.objects.get(pk=request.GET.get('character_id'))
+		item = request.GET.get('item')
 		i = Item.objects.get(name=item)
 		i.characters.add(character)
 

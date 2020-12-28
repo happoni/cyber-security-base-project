@@ -27,8 +27,8 @@
 		<h1>All items in Inventory</h1>
 	
 		<h3>Add new item to Inventory</h3>
-			<form method="POST" action="/add_item/">
-				{% csrf_token %}
+			<form method="GET" action="/add_item/">
+
 				<label for="name">Item name:</label><br>
 				<input type="text" name="name"/><br>
 				<label for="armor_level">Armor level:</label><br>
